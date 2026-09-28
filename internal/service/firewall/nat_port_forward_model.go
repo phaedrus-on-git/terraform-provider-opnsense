@@ -84,10 +84,10 @@ func (m *NatPortForwardResourceModel) toAPI(ctx context.Context) *natPortForward
 	}
 
 	return &natPortForwardAPIRequest{
-		Disabled:    opnsense.BoolToString(!m.Enabled.ValueBool()), // Invert: enabled=true → disabled="0"
-		Interface:   m.Interface.ValueString(),
-		IPProtocol:  m.IPProtocol.ValueString(),
-		Protocol:    m.Protocol.ValueString(),
+		Disabled:   opnsense.BoolToString(!m.Enabled.ValueBool()), // Invert: enabled=true → disabled="0"
+		Interface:  m.Interface.ValueString(),
+		IPProtocol: m.IPProtocol.ValueString(),
+		Protocol:   m.Protocol.ValueString(),
 		Source: natDNatEndpoint{
 			Network: m.SourceNet.ValueString(),
 			Port:    m.SourcePort.ValueString(),
